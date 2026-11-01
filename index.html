@@ -1,9 +1,10 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BLITZ FREE KEY</title>
 
 <style>
@@ -11,6 +12,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -21,6 +27,7 @@ body {
     background: #080b14;
     font-family: Arial, sans-serif;
     color: white;
+    overflow-x: hidden;
 }
 
 .container {
@@ -41,17 +48,31 @@ h1 {
     text-shadow: 0 0 15px #00eaff;
 }
 
+/* BUTTONS */
+button {
+    width: 100%;
+    padding: 17px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.unlock {
+    background: #00eaff;
+    border: 1px solid #00eaff;
+    color: #080b14;
+}
+
+.unlock:hover {
+    box-shadow: 0 0 20px #00eaff;
+}
+
 .key {
     background: #080b14;
     border: 1px solid #00eaff;
-    padding: 18px 10px;
-    border-radius: 10px;
-    font-size: 19px;
-    font-weight: bold;
-    color: #ffffff;
-    cursor: pointer;
-    transition: 0.3s;
-    user-select: none;
+    color: white;
 }
 
 .key:hover {
@@ -60,10 +81,34 @@ h1 {
     box-shadow: 0 0 20px #00eaff;
 }
 
+button:active {
+    transform: scale(0.97);
+}
+
+#timer {
+    margin-top: 20px;
+    color: #00eaff;
+    font-size: 17px;
+    min-height: 20px;
+}
+
+#keySection {
+    display: none;
+    margin-top: 15px;
+}
+
+.device-info {
+    margin-top: 12px;
+    color: #00eaff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 #message {
     margin-top: 20px;
     color: #00ff99;
-    font-size: 15px;
+    font-size: 14px;
     min-height: 18px;
 }
 
@@ -81,11 +126,23 @@ h1 {
 
     <h1>BLITZ FREE KEY</h1>
 
-    <div class="key" onclick="copyKey()">
-        BLZ-HXCQ6W-D5UT7C
+    <button class="unlock" id="unlockBtn" onclick="startUnlock()">
+        🔓 UNLOCK
+    </button>
+
+    <p id="timer"></p>
+
+    <div id="keySection">
+
+        <button class="key" onclick="copyKey()">
+            🎁 FREE KEY
+        </button>
+
+        <p class="device-info">1 Device • 1 Day</p>
+
     </div>
 
-    <p id="message">CLICK KEY TO COPY</p>
+    <p id="message">CLICK UNLOCK TO GET YOUR KEY</p>
 
     <div class="footer">
         BLITZ FREE KEY SYSTEM
@@ -94,21 +151,78 @@ h1 {
 </div>
 
 <script>
-function copyKey() {
-    const key = "BLZ-HXCQ6W-D5UT7C";
 
-    navigator.clipboard.writeText(key)
-    .then(() => {
-        document.getElementById("message").innerText =
-        "✓ KEY COPIED SUCCESSFULLY!";
-    })
-    .catch(() => {
-        document.getElementById("message").innerText =
-        "COPY FAILED - TRY AGAIN";
-    });
+const key = "BLZ-HXCQ6W-D5UT7C";
+
+function startUnlock() {
+
+    const button = document.getElementById("unlockBtn");
+    const timer = document.getElementById("timer");
+    const keySection = document.getElementById("keySection");
+    const message = document.getElementById("message");
+
+    let seconds = 5;
+
+    button.disabled = true;
+    button.style.opacity = "0.6";
+    button.innerText = "PLEASE WAIT...";
+
+    message.innerText = "";
+
+    timer.innerText = "UNLOCKING IN " + seconds + " SECONDS";
+
+    const countdown = setInterval(() => {
+
+        seconds--;
+
+        if (seconds > 0) {
+            timer.innerText = "UNLOCKING IN " + seconds + " SECONDS";
+        } else {
+
+            clearInterval(countdown);
+
+            timer.innerText = "✓ UNLOCK SUCCESSFUL!";
+
+            button.style.display = "none";
+            keySection.style.display = "block";
+
+            message.innerText = "YOUR FREE KEY IS READY!";
+        }
+
+    }, 1000);
 }
+
+async function copyKey() {
+
+    const message = document.getElementById("message");
+
+    try {
+
+        await navigator.clipboard.writeText(key);
+        message.innerText = "✓ KEY COPIED SUCCESSFULLY!";
+
+    } catch (error) {
+
+        const input = document.createElement("textarea");
+
+        input.value = key;
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+
+        document.body.appendChild(input);
+        input.select();
+
+        if (document.execCommand("copy")) {
+            message.innerText = "✓ KEY COPIED SUCCESSFULLY!";
+        } else {
+            message.innerText = "COPY FAILED - TRY AGAIN";
+        }
+
+        input.remove();
+    }
+}
+
 </script>
 
 </body>
 </html>
-```
