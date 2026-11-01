@@ -1,636 +1,114 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLITZ FREE KEY</title>
 
-  <title>LordModi.9 Giveaway</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #080b14;
+    font-family: Arial, sans-serif;
+    color: white;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080808;
-      color: #fff;
-      min-height: 100vh;
-    }
+.container {
+    text-align: center;
+    background: #111827;
+    padding: 40px 25px;
+    border: 1px solid #00eaff;
+    border-radius: 18px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 0 25px #00eaff44;
+}
 
-    .container {
-      width: 100%;
-      max-width: 650px;
-      margin: auto;
-      padding: 25px 15px 50px;
-    }
+h1 {
+    color: #00eaff;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #00eaff;
+}
 
-    .header {
-      text-align: center;
-      padding: 25px 10px;
-    }
+.key {
+    background: #080b14;
+    border: 1px solid #00eaff;
+    padding: 18px 10px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
 
-    .logo {
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #fff;
-      margin-bottom: 15px;
-    }
+.key:hover {
+    background: #00eaff;
+    color: #080b14;
+    box-shadow: 0 0 20px #00eaff;
+}
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
+#message {
+    margin-top: 20px;
+    color: #00ff99;
+    font-size: 15px;
+    min-height: 18px;
+}
 
-    .subtitle {
-      color: #aaa;
-      font-size: 15px;
-    }
-
-    .card {
-      background: #111;
-      border: 1px solid #292929;
-      border-radius: 18px;
-      padding: 25px;
-      margin-top: 20px;
-    }
-
-    .counter {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .counter-number {
-      font-size: 38px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .counter-text {
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    .progress {
-      width: 100%;
-      height: 10px;
-      background: #292929;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-top: 15px;
-    }
-
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #7b2cff, #ff2d75);
-      transition: width 0.4s ease;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 7px;
-      font-size: 14px;
-      color: #ddd;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #333;
-      background: #080808;
-      color: #fff;
-      outline: none;
-      font-size: 15px;
-    }
-
-    input:focus {
-      border-color: #8b4cff;
-    }
-
-    button {
-      width: 100%;
-      margin-top: 20px;
-      padding: 15px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #7b2cff, #ff2d75);
-      color: #fff;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .message {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .success {
-      color: #48e38a;
-    }
-
-    .error {
-      color: #ff5c5c;
-    }
-
-    .winners {
-      display: none;
-    }
-
-    .winners h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .winner {
-      padding: 14px;
-      margin: 8px 0;
-      background: #191919;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .winner-number {
-      color: #999;
-      margin-right: 8px;
-    }
-
-    .closed {
-      text-align: center;
-      color: #ff5c5c;
-      font-weight: bold;
-      margin-top: 15px;
-      display: none;
-    }
-
-    .footer {
-      text-align: center;
-      color: #666;
-      font-size: 13px;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 500px) {
-      .container {
-        padding: 15px 12px 40px;
-      }
-
-      h1 {
-        font-size: 27px;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .counter-number {
-        font-size: 34px;
-      }
-    }
-  </style>
+.footer {
+    margin-top: 30px;
+    color: #777;
+    font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <div class="header">
+    <h1>BLITZ FREE KEY</h1>
 
-    <img
-      src="lordmodi.jpeg"
-      class="logo"
-      alt="LordModi.9 Logo"
-    >
-
-    <h1>LordModi.9</h1>
-
-    <p class="subtitle">
-      🎁 Giveaway • 500 Participants • 10 Winners
-    </p>
-
-  </div>
-
-
-  <div class="card">
-
-    <div class="counter">
-
-      <div class="counter-number">
-        <span id="participantCount">0</span> / 500
-      </div>
-
-      <div class="counter-text">
-        Participants
-      </div>
-
-      <div class="progress">
-        <div
-          class="progress-bar"
-          id="progressBar">
-        </div>
-      </div>
-
+    <div class="key" onclick="copyKey()">
+        BLZ-HXCQ6W-D5UT7C
     </div>
 
+    <p id="message">CLICK KEY TO COPY</p>
 
-    <div id="participationForm">
-
-      <label for="name">
-        Your Name
-      </label>
-
-      <input
-        type="text"
-        id="name"
-        placeholder="Enter your name"
-        maxlength="50"
-      >
-
-
-      <label for="telegram">
-        Telegram ID
-      </label>
-
-      <input
-        type="text"
-        id="telegram"
-        placeholder="@yourusername"
-        maxlength="50"
-      >
-
-
-      <button
-        id="participateBtn"
-        onclick="participate()">
-        🎁 Participate
-      </button>
-
-      <div
-        id="message"
-        class="message">
-      </div>
-
+    <div class="footer">
+        BLITZ FREE KEY SYSTEM
     </div>
-
-
-    <div
-      id="closedMessage"
-      class="closed">
-
-      🚫 Participation Closed<br>
-      500 participants completed.
-
-    </div>
-
-  </div>
-
-
-  <div
-    class="card winners"
-    id="winnersSection">
-
-    <h2>🏆 Winners</h2>
-
-    <div id="winnerList"></div>
-
-  </div>
-
-
-  <div class="footer">
-    © 2026 LordModi.9
-  </div>
 
 </div>
 
-
 <script>
+function copyKey() {
+    const key = "BLZ-HXCQ6W-D5UT7C";
 
-  /*
-  ========================================
-  GOOGLE APPS SCRIPT URL
-  ========================================
-  */
-
-  const API_URL =
-    "https://script.google.com/macros/s/AKfycby_2tNWO1LEjD27K_mTa7I6Cm4pWlVbvCZnBqTzdONOb4x6tLAdaHJZLAvHlsE52zmKzQ/exec";
-
-
-  /*
-  ========================================
-  PARTICIPATE
-  ========================================
-  */
-
-  function participate() {
-
-    const name =
-      document.getElementById("name").value.trim();
-
-    const telegram =
-      document.getElementById("telegram").value.trim();
-
-    const message =
-      document.getElementById("message");
-
-    const button =
-      document.getElementById("participateBtn");
-
-
-    message.innerHTML = "";
-    message.className = "message";
-
-
-    if (!name) {
-
-      message.innerHTML =
-        "Please enter your name.";
-
-      message.classList.add("error");
-
-      return;
-    }
-
-
-    if (!telegram) {
-
-      message.innerHTML =
-        "Please enter your Telegram ID.";
-
-      message.classList.add("error");
-
-      return;
-    }
-
-
-    button.disabled = true;
-    button.innerText = "Submitting...";
-
-
-    fetch(API_URL, {
-
-      method: "POST",
-
-      body: JSON.stringify({
-
-        name: name,
-        telegram: telegram
-
-      })
-
+    navigator.clipboard.writeText(key)
+    .then(() => {
+        document.getElementById("message").innerText =
+        "✓ KEY COPIED SUCCESSFULLY!";
     })
-
-    .then(response => response.json())
-
-    .then(data => {
-
-      if (data.success) {
-
-        message.innerHTML =
-          "✅ Successfully participated!";
-
-        message.classList.add("success");
-
-
-        document.getElementById("name").value = "";
-
-        document.getElementById("telegram").value = "";
-
-
-        updateCounter(data.count);
-
-
-        button.disabled = false;
-
-        button.innerText =
-          "🎁 Participate";
-
-
-        loadData();
-
-      } else {
-
-        message.innerHTML =
-          "❌ " + (data.message || "Something went wrong.");
-
-        message.classList.add("error");
-
-
-        button.disabled = false;
-
-        button.innerText =
-          "🎁 Participate";
-
-      }
-
-    })
-
-    .catch(error => {
-
-      console.error(error);
-
-      message.innerHTML =
-        "❌ Unable to connect. Please try again.";
-
-      message.classList.add("error");
-
-
-      button.disabled = false;
-
-      button.innerText =
-        "🎁 Participate";
-
+    .catch(() => {
+        document.getElementById("message").innerText =
+        "COPY FAILED - TRY AGAIN";
     });
-
-  }
-
-
-  /*
-  ========================================
-  LOAD DATA
-  ========================================
-  */
-
-  function loadData() {
-
-    fetch(API_URL)
-
-      .then(response => response.json())
-
-      .then(data => {
-
-        if (data.success) {
-
-          updateCounter(data.count || 0);
-
-
-          if (
-            data.winners &&
-            data.winners.length === 10
-          ) {
-
-            showWinners(data.winners);
-
-          }
-
-        }
-
-      })
-
-      .catch(error => {
-
-        console.log(
-          "Unable to load data."
-        );
-
-      });
-
-  }
-
-
-  /*
-  ========================================
-  UPDATE COUNTER
-  ========================================
-  */
-
-  function updateCounter(count) {
-
-    document.getElementById(
-      "participantCount"
-    ).innerText = count;
-
-
-    const percentage =
-      (count / 500) * 100;
-
-
-    document.getElementById(
-      "progressBar"
-    ).style.width =
-      Math.min(percentage, 100) + "%";
-
-
-    if (count >= 500) {
-
-      document.getElementById(
-        "participateBtn"
-      ).disabled = true;
-
-
-      document.getElementById(
-        "participateBtn"
-      ).innerText =
-        "Participation Closed";
-
-
-      document.getElementById(
-        "closedMessage"
-      ).style.display =
-        "block";
-
-    }
-
-  }
-
-
-  /*
-  ========================================
-  SHOW WINNERS
-  ========================================
-  */
-
-  function showWinners(winners) {
-
-    const section =
-      document.getElementById(
-        "winnersSection"
-      );
-
-    const list =
-      document.getElementById(
-        "winnerList"
-      );
-
-
-    list.innerHTML = "";
-
-
-    winners.forEach(
-      (winner, index) => {
-
-        const div =
-          document.createElement("div");
-
-
-        div.className =
-          "winner";
-
-
-        div.innerHTML =
-          '<span class="winner-number">' +
-          (index + 1) +
-          '.</span> ' +
-          escapeHTML(winner);
-
-
-        list.appendChild(div);
-
-      }
-    );
-
-
-    section.style.display =
-      "block";
-
-  }
-
-
-  /*
-  ========================================
-  ESCAPE HTML
-  ========================================
-  */
-
-  function escapeHTML(text) {
-
-    const div =
-      document.createElement("div");
-
-    div.textContent =
-      text;
-
-    return div.innerHTML;
-
-  }
-
-
-  /*
-  ========================================
-  START WEBSITE
-  ========================================
-  */
-
-  loadData();
-
+}
 </script>
 
 </body>
 </html>
+```
